@@ -1,0 +1,19 @@
+Welcome {{user}},
+		
+		
+<a href="{% url 'logout' %}"><button>Logout</button></a>
+
+{% if user.has_package %}
+
+{{package}}
+
+{% else %}
+{{package_message}}
+<h1>Please select a package</h1>
+{{packageForm.as_p}}
+
+
+{% endif %}
+
+
+
