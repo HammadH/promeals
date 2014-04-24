@@ -31,12 +31,11 @@ class UserRegistrationForm(forms.ModelForm):
 	email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder':'Activation email will be sent'}))
 	password = forms.CharField(widget=forms.PasswordInput)
 	address = forms.CharField(widget=forms.Textarea(attrs={'rows':'3'}))
-	free_meal_package = forms.ChoiceField(choices=PACKAGE_TYPE, widget=forms.RadioSelect())
 	mobile = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'You will recieve a call on this number'}))
 	address = forms.CharField(widget=forms.Textarea(attrs={'placeholder':'Your complete address to deliver the meal', 'rows':'3'}))
 	class Meta:
 		model = User
-		fields = ['full_name', 'email', 'password', 'free_meal_package' ,'mobile', 'address']
+		fields = ['full_name', 'email', 'password', 'mobile', 'address']
 
 	def clean_mobile(self):
 		mobile_no = self.cleaned_data['mobile']

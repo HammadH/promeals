@@ -67,8 +67,8 @@ class Package(models.Model):
 
 
 
-admin.site.register(Package)
-admin.site.register(Promotion)
+# admin.site.register(Package)
+# admin.site.register(Promotion)
 # class Menu(models.Model):
 # 	menu_type = models.ChoiceField()
 

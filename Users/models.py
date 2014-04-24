@@ -12,8 +12,8 @@ from django.template.loader import render_to_string
 
 
 class UserManager(BaseUserManager):
-	def create_user(self, full_name, free_meal_package, email, password, mobile, address):
-			new_user = self.model(full_name=full_name, free_meal_package=free_meal_package, email=email,
+	def create_user(self, full_name,  email, password, mobile, address):
+			new_user = self.model(full_name=full_name, email=email,
 								mobile=mobile, address=address)
 			new_user.set_password(password)
 			try:
@@ -51,8 +51,8 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
 	full_name = models.CharField(max_length=100, blank=False)
 	email = models.EmailField(unique=True, blank=False)
-	free_meal_package = models.CharField(blank=False, max_length=40, null=True)
 	mobile = models.CharField(unique=True, blank=False, max_length=10)
+	free_meal_package = models.CharField(max_length=50)
 	address = models.TextField()
 
 	date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
@@ -129,6 +129,6 @@ signals.post_save.connect(send_activation_email, User, dispatch_uid= "new user r
 
 
 
-admin.site.register(User)
+# admin.site.register(User)
 
 

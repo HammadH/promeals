@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap3',
+    'south',
     'Users',
     'Packages',
 )
@@ -62,7 +63,7 @@ WSGI_APPLICATION = 'food.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': 'promeals',
+        'NAME': 'promeals_db',
         'USER': 'promeals_user',
         'PASSWORD': 'pro123',
         'HOST': '127.0.0.1',
