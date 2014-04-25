@@ -52,7 +52,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 	full_name = models.CharField(max_length=100, blank=False)
 	email = models.EmailField(unique=True, blank=False)
 	mobile = models.CharField(unique=True, blank=False, max_length=10)
-	free_meal_package = models.CharField(max_length=50)
 	address = models.TextField()
 
 	date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
