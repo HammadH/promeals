@@ -128,6 +128,6 @@ signals.post_save.connect(send_activation_email, User, dispatch_uid= "new user r
 
 
 
-# admin.site.register(User)
+admin.site.register(User)
 
 

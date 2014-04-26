@@ -39,12 +39,11 @@ class HomeView(View):
 			form = UserRegistrationForm(request.POST)
 			if form.is_valid():
 				full_name = form.cleaned_data['full_name']
-				free_meal_package = form.cleaned_data['free_meal_package']
 				email = form.cleaned_data['email']
 				password = form.cleaned_data['password']
 				address = form.cleaned_data['address']
 				mobile = form.cleaned_data['mobile']
-				new_user = User.objects.create_user(full_name, free_meal_package, email, password, mobile, address)
+				new_user = User.objects.create_user(full_name, email, password, mobile, address)
 				new_user.save()
 				return HttpResponse('ok')
 			else:
